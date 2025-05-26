@@ -1,4 +1,6 @@
 # D-FLIPDLOP-NEGEDGE
+## Developed by: NADISH.S
+## Register Number: 212224050023
 
 **AIM:**
 
@@ -28,56 +30,37 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 **Procedure**
 
-1) Define Module: Define a Verilog module for the D flip-flop with inputs (D, CLK) and outputs (Q, Q_bar).
+1.Open Quartus → Create a New Project.
 
-2) Declare Inputs and Outputs: Declare input and output ports for the module.
+2.Write Verilog Code for D Flip-Flop using negedge clk.
 
-3) Implement Flip-Flop Logic: Write Verilog code to implement the D flip-flop logic based on its functional table. Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
+3.Save the Code (e.g., D_FF.v) → Add it to the project.
 
-4) Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the D flip-flop under different input conditions.
+4.Set Top-Level Module in project settings.
 
-5) Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (D, CLK) to cover all possible input states.
-
-6) Verify Output Behavior: Verify that the output behavior of the D flip-flop matches the expected behavior defined by its functional table.
-
-7) Check for Race Conditions: Ensure that there are no race conditions or undefined states in the design by analyzing the timing and sequence of input changes.
-
+5.Compile the project → Done!
 
 **PROGRAM**
 ```
-/*
-Program for flipflops and verify its truth table in quartus using Verilog programming. 
-Developed by: GAUTHAM KRISHNA S
-RegisterNumber: 212223240036
-*/
-```
-
-```vhdl
-module EXP_8(D,Clock,reset,Q,Qbar);
-input D,Clock,reset;
-output reg Q,Qbar;
-always @(negedge Clock)
+module dflip(D,Clock,reset,Q);
+input D,reset,Clock;
+output reg Q;
+always @ (negedge Clock)
 if(!reset)
-	Q<=0;
+Q <= 0;
 else
-	Q<=D;
+Q <= D;
 endmodule
 ```
-
 **RTL LOGIC FOR FLIPFLOPS**
+![Screenshot 2025-05-08 103637](https://github.com/user-attachments/assets/8d05a47a-fed5-4085-9c83-6911d4e8a335)
 
-![image](https://github.com/gauthamkrishna7/D-FLIPDLOP-NEGEDGE/assets/141175025/62373e4d-0689-4b80-842e-165057294500)
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot 2025-05-08 103655](https://github.com/user-attachments/assets/83a3989b-d0fa-4d51-a6f0-12179b5b6e4e)
 
-![image](https://github.com/gauthamkrishna7/D-FLIPDLOP-NEGEDGE/assets/141175025/4b72f1cc-faa4-4acf-88c3-8cc9ba3361fa)
 
 **RESULTS**
 
-Thus the program to implement a D flipflop using verilog and validating their functionality using their functional tables.
-
-
-
-
-
+Thus the D flipflop using verilog and validating their functionality using their functional tables is implemented successfully.
